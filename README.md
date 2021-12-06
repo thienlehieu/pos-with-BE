@@ -1,4 +1,4 @@
-Database: MySQL\
+Database: `MySQL`
 
 In the project directory, you can run:
 
