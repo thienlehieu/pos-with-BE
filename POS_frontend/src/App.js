@@ -6,6 +6,8 @@ import Home from './Components/Home';
 import Cart from './Components/Cart';
 import Payment from './Components/Payment'
 import Login from './Components/Login'
+import ResetPw from './Components/ResetPw'
+import Signup from './Components/Signup'
 import axios from 'axios';
 import {
   BrowserRouter as Router,
@@ -82,6 +84,8 @@ function App () {
         <Route exact path="/cart" element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>} />
         <Route exact path="/payment" element={<Payment />} />
         <Route exact path="/login" element={<Login isLogin={isLogin} setLogin={setLogin} />} />
+        <Route exact path="/resetpw" element={<ResetPw />} />
+        <Route exact path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   )

@@ -1,12 +1,20 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, FormGroup, Label, Input } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
 
 const Login = ({isLogin, setLogin}) => {
+	function handleClick(e) {
+		if (window.confirm("Are you sure you want to sign out")){
+			setLogin(false)
+		}
+		else {
+			e.preventDefault()
+		}
+	}
 	return (
 		isLogin ?
-		<div className="block"> 
+		<div className="loginbody"> 
 		<form>
 			<h3 className="mb-4 text-center">User information</h3>
 			<FormGroup>
@@ -41,44 +49,51 @@ const Login = ({isLogin, setLogin}) => {
 					disabled={true}
 				/>
 			</FormGroup>
-			<button className="btn btn-primary btn-block" onClick={
-				(e) => window.confirm("Are you sure you want to sign out") && setLogin(false)}>Sign out</button>
+			<button className="btn btn-primary btn-block" onClick={handleClick}>Sign out</button>
 		</form>
 		</div>
 		:
 		<div className="loginbody">
-			<div className="containersmall">
+			<form>
 				<h3 className="mb-5 text-center title">
 					Restaurant POS System
 				</h3>
 				<h3 className="mb-4 text-center">Sign in</h3>
-
-				<Form>
-					<FormGroup>
-						<Label for="exampleEmail">Email</Label>
-						<Input
-							type="email"
-							name="email"
-							id="exampleEmail"
-							placeholder="Enter your email"
-						/>
-					</FormGroup>
-					<FormGroup>
-						<Label for="examplePassword">Password</Label>
-						<Input
-							type="password"
-							name="password"
-							id="examplePassword"
-							placeholder="Enter your password"
-						/>
-					</FormGroup>
-				</Form>
+				<FormGroup>
+					<Label for="exampleEmail">Email</Label>
+					<Input
+						type="email"
+						name="email"
+						id="exampleEmail"
+						placeholder="Enter your email"
+					/>
+				</FormGroup>
+				<FormGroup>
+					<Label for="examplePassword">Password</Label>
+					<Input
+						type="password"
+						name="password"
+						id="examplePassword"
+						placeholder="Enter your password"
+					/>
+				</FormGroup>
+				<div>
+					<input type="checkbox" />
+					<label> Remember me</label>
+				</div>
+				<br></br>
 				<Link to="/">
 					<Button className="btn btn-primary btn-block" onClick={() => setLogin(true)}>
 						Sign in
 					</Button>
 				</Link>
-			</div>
+			</form>
+			<p className="forgot-password text-right">
+				Don't have an account? <a href="/signup">Register Now</a>
+			</p>
+			<p className="forgot-password text-right">
+				Forgot <a href="/resetpw">password?</a>
+			</p>
 		</div>
 	);
 };

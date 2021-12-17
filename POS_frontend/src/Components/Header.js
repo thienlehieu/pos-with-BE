@@ -37,7 +37,7 @@ function Header ({countCartItems, isLogin, items, setMenuItems,setMenuSearchItem
                             <button className="badge">{countCartItems}</button>) : ('')
                         }</Nav.Link>
                         <Nav.Link as={Link} to="/payment">Payment</Nav.Link>
-                        <Nav.Link as={Link} to="/login">{isLogin ? "Sign out": "Sign in"}</Nav.Link>
+                        <Nav.Link as={Link} to="/login">{isLogin ? "Profile": "Sign in"}</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                 <Form className="d-flex" onSubmit={() => filterSearchItems(seacchVal)}>
