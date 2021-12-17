@@ -1,1 +1,5 @@
-# pos-with-BE
+Database: `MySQL`
+
+In the project directory, you can run:
+
+### `npm run dev`
