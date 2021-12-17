@@ -8,6 +8,8 @@ import Payment from './Components/Payment'
 import Login from './Components/Login'
 import ResetPw from './Components/ResetPw'
 import Signup from './Components/Signup'
+import PaymentDone from './Components/PaymentDone'
+
 import axios from 'axios';
 import {
   BrowserRouter as Router,
@@ -82,10 +84,11 @@ function App () {
       <Routes>
         <Route exact path={"/"} element={<Home onAdd={onAdd} isLogin={isLogin} menuItems={menuItems} menuSearchItems={menuSearchItems} setMenuSearchItems={setMenuSearchItems} />} />
         <Route exact path="/cart" element={<Cart cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>} />
-        <Route exact path="/payment" element={<Payment />} />
+        <Route exact path="/payment" element={<Payment cartItems={cartItems} setCartItems={setCartItems}/>} />
         <Route exact path="/login" element={<Login isLogin={isLogin} setLogin={setLogin} />} />
         <Route exact path="/resetpw" element={<ResetPw />} />
         <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/paymentdone" element={<PaymentDone />} />
       </Routes>
     </Router>
   )

@@ -14,7 +14,7 @@ const ResetPw = () => {
     return (
         <div className="loginbody">
         <div className="containersmall">
-            <h3 className="mb-5 text-center title">
+            <h3 className="mb-5 text-center title" style={{color:"#ff8080"}}>
                 Restaurant POS System
             </h3>
 
@@ -30,7 +30,7 @@ const ResetPw = () => {
                 </FormGroup>
             </Form>
             <Link to="/login">
-                <Button className="btn btn-primary btn-block" onClick={handleClick}>
+                <Button className="btn btn-warning" onClick={handleClick}>
                     Reset password
                 </Button>
             </Link>

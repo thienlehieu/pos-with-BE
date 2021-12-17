@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 
 const Cart = ({onAdd, onRemove, cartItems}) => {
     const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
@@ -57,11 +57,11 @@ const Cart = ({onAdd, onRemove, cartItems}) => {
                 </div>
               </div>
               <hr />
-              <div>
-                <button className="checkout" onClick={() => alert('Implement Checkout!')}>
+              <Link to="/payment">
+                <button className="checkout">
                   Thanh toán
                 </button>
-              </div>
+              </Link>
             </>
           )}
         </div>

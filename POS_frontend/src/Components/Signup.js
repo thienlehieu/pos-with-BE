@@ -15,10 +15,10 @@ const Signup = () => {
     return (
         <div className="loginbody">
         <div className="containersmall">
-            <h3 className="mb-5 text-center title">
+            <h3 className="mb-5 text-center title" style={{color:"#ff8080"}}>
                 Restaurant POS System
             </h3>
-            <h3 className="mb-4 text-center">Sign up</h3>
+            <h3 className="mb-5 text-center title" style={{color:"#ffb3b3"}}>Sign up</h3>
             <Form>
                 <FormGroup>
                     <Label for="exampleEmail">Email</Label>
@@ -61,9 +61,8 @@ const Signup = () => {
                 <input type="checkbox" />
                 <label> I agree with term and conditions</label>
             </div>
-            <br></br>
             <Link to="/login">
-                <Button className="btn btn-primary btn-block" onClick={handleClick}>
+                <Button className="btn btn-success" onClick={handleClick}>
                     Register
                 </Button>
             </Link>

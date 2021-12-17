@@ -49,16 +49,16 @@ const Login = ({isLogin, setLogin}) => {
 					disabled={true}
 				/>
 			</FormGroup>
-			<button className="btn btn-primary btn-block" onClick={handleClick}>Sign out</button>
+			<button className="btn btn-danger" onClick={handleClick}>Sign out</button>
 		</form>
 		</div>
 		:
 		<div className="loginbody">
 			<form>
-				<h3 className="mb-5 text-center title">
+				<h3 className="mb-5 text-center title" style={{color:"#ff8080"}}>
 					Restaurant POS System
 				</h3>
-				<h3 className="mb-4 text-center">Sign in</h3>
+				<h3 className="mb-5 text-center title" style={{color:"#ffb3b3"}}>Sign in</h3>
 				<FormGroup>
 					<Label for="exampleEmail">Email</Label>
 					<Input
@@ -81,9 +81,9 @@ const Login = ({isLogin, setLogin}) => {
 					<input type="checkbox" />
 					<label> Remember me</label>
 				</div>
-				<br></br>
+
 				<Link to="/">
-					<Button className="btn btn-primary btn-block" onClick={() => setLogin(true)}>
+					<Button className="btn btn-success" onClick={() => setLogin(true)}>
 						Sign in
 					</Button>
 				</Link>
