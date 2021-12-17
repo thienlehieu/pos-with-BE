@@ -223,3 +223,25 @@ button.badge {
   color: #ffffff;
   width: 1.5rem;
 }
+
+.loginbody {
+	background: #343a40;
+	color: #fff;
+	height: 100vh;
+	padding: 15vh 60vh 15vh 60vh;
+}
+
+.loginbody .title {
+	font-weight: 900;
+}
+
+.logoutbody {
+	background: #343a40;
+	color: #fff;
+	height: 100vh;
+	padding: 15vh 60vh 15vh 60vh;
+}
+
+.logoutbody .title {
+	font-weight: 900;
+}

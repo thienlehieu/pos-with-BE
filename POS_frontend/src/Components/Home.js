@@ -4,20 +4,18 @@ import Categories from "./Categories";
 import logo from "../Data/images/logo.JPG";
 
 
-const Home = ({ items, onAdd}) => {
-  const allCategories = ["Tất cả", ...new Set(items.map((item) => item.category))];
-  console.log(allCategories)
-  const [menuItems, setMenuItems] = useState(items);
+const Home = ({onAdd, isLogin, menuItems, menuSearchItems, setMenuSearchItems}) => {
+  const allCategories = ["Tất cả", ...new Set(menuItems.map((item) => item.category))];
   const [activeCategory, setActiveCategory] = useState("");
-  //const [categories, setCategories] = useState(allCategories);
+  
   const filterItems = (category) => {
     setActiveCategory(category);
     if (category === "Tất cả") {
-      setMenuItems(items);
+      setMenuSearchItems(menuItems);
       return;
     }
-    const newItems = items.filter((item) => item.category === category);
-    setMenuItems(newItems);
+    const newItems = menuItems.filter((item) => item.category === category);
+    setMenuSearchItems(newItems);
   };
   
   return (
@@ -33,7 +31,7 @@ const Home = ({ items, onAdd}) => {
           activeCategory={activeCategory}
           filterItems={filterItems}
         />
-        <Menu items={menuItems} onAdd={onAdd}/>
+        <Menu items={menuSearchItems} onAdd={onAdd} isLogin={isLogin}/>
       </section>
     </main>
   );
